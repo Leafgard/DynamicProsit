@@ -16,7 +16,7 @@ function createWindow() {
     frame: false
   })
   win.loadFile('views/index.html')
-  win.webContents.openDevTools()
+  //win.webContents.openDevTools()
 
   win.on('closed', () => {
     win = null
@@ -46,9 +46,6 @@ app.on('activate', () => {
  */
 const ipcMain = require('electron').ipcMain
 const generateDocx = require('generate-docx')
-const docxConverter = require('docx-pdf')
-const fs = require('fs')
-const path = require('path')
 
 ipcMain.on('submitForm', function(event, data) {
 
