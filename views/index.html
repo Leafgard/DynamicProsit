@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>DynamicProsit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- MaterializeCSS, Material Icons & Custom CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-wrapper draggable">
+        <a href="#!" class="brand-logo center" disabled>
+          <img src="../assets/img/DynamicProsit.png" alt="DynamicProsit" height="55" style="margin-top: 5px">
+        </a>
+        <ul class="left">
+          <li><a onClick=""><i class="material-icons">settings</i></a></li>
+        </ul>
+        <ul class="right">
+          <li><a onClick="minimizeWindow()"><i class="material-icons">minimize</i></a></li>
+          <li><a onClick="maximizeWindow()"><i class="material-icons">fullscreen</i></a></li>
+          <li><a onClick="closeWindow()"><i class="material-icons">clear</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col s12 prositForm z-depth-3">
+          <form>
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">title</i>
+                <input type="text" id="prositTitle" class="validate">
+                <label for="prositTitle">Titre du prosit</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">link</i>
+                <input type="text" id="prositLink" class="validate">
+                <label for="prositLink">URL du prosit sur Moodle</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s3">
+                <i class="material-icons prefix">account_circle</i>
+                  <input id="animateur" type="text" class="validate">
+                  <label for="animateur">Animateur</label>
+              </div>
+              <div class="input-field col s3">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="secretaire" type="text" class="validate">
+                <label for="secretaire">Secrétaire</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">short_text</i>
+                <textarea id="contexte" class="materialize-textarea"></textarea>
+                <label for="contexte">Contexte</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s3">
+                <i class="material-icons prefix">account_circle</i>
+                  <input id="scribe" type="text" class="validate">
+                  <label for="scribe">Scribe</label>
+              </div>
+              <div class="input-field col s3">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="gestionnaire" type="text" class="validate">
+                <label for="gestionnaire">Gestionnaire</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">short_text</i>
+                <textarea id="generalisation" class="materialize-textarea"></textarea>
+                <label for="generalisation">Généralisation</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <div class="chips chips-placeholder input-field motcles"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <div class="chips chips-placeholder input-field contraintes"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <div class="chips chips-placeholder input-field problematiques"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <div class="chips chips-placeholder input-field solutions"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <button type="submit" class="waves-effect waves-light btn-large generate"><i class="material-icons left">file_copy</i> Générer le fichier</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Sous quel format souhaitez-vous générer le prosit aller ?</h4>
+        <br>
+        <a disabled id="pdf" href="#!" class="waves-effect waves-light btn-large generate"><i class="material-icons left">lock</i>.PDF</a>
+        <a id="docx" href="#!" class="waves-effect waves-light btn-large generate" style="margin-left: 20px"><i class="material-icons left">edit</i>.DOCX</a>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Annuler</a>
+      </div>
+    </div>
+    <!-- jQuery & MaterializeCSS Libs -->
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </footer>
+</body>
+</html>

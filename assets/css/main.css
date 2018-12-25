@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+* {
+  font-family: 'Oxygen', serif;
+}
+
+html { 
+  background: #1D976C;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body {
+  min-width: 100vw;
+  min-height: calc(100vh - 64px);
+  text-align: center;
+}
+
+nav {
+  background-color: #FFF;
+  box-shadow: none;
+}
+
+.container-fluid {
+  width: 98vw;
+  margin: 1vw;
+}
+
+.draggable {
+  -webkit-app-region: drag;
+}
+
+.nav-wrapper > a, .nav-wrapper * {
+  color: rgb(0, 0, 0, 0.4);
+}
+
+.container {
+  margin-top: 32px;
+}
+
+.prositForm {
+  padding: 30px !important;
+  width: 100%;
+  background-color: #FFF;
+  border-radius: 10px;
+  min-height: calc(100vh - 128px);
+}
+
+.input-field .prefix.active {
+  color: #1D976C !important;
+}
+
+.input-field input[type=text]:focus + label {
+  color: #1D976C !important;
+  box-shadow: none !important;
+}
+
+.input-field textarea:focus + label {
+  color: #1D976C !important;
+  box-shadow: none !important;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #1D976C !important;
+  box-shadow: none !important;
+}
+
+.input-field textarea:focus {
+  border-bottom: 1px solid #1D976C !important;
+  box-shadow: none !important;
+}
+
+.nav-wrapper a i {
+  transition: color 300ms ease-in-out;
+}
+
+.nav-wrapper a:hover i {
+  color: #1D976C !important;
+}
+
+.chips {
+  text-align: left;
+}
+
+.chips.focus {
+  border-bottom: 1px solid #1D976C !important;
+  box-shadow: none !important;
+}
+
+.chip:focus {
+  background-color: #1D976C !important;
+}
+
+.generate {
+  background: #1D976C;
+}
+
+.generate:first-child {
+  margin-right: 20px;
+}

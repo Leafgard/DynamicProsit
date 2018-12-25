@@ -1,0 +1,37 @@
+{
+  "name": "dynamicprosit",
+  "version": "1.0.0",
+  "description": "Interface d'édition de Prosits",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leafgard/DynamicProsit.git"
+  },
+  "author": "Yann SEGET <dev@leafgard.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leafgard/DynamicProsit/issues"
+  },
+  "homepage": "https://github.com/Leafgard/DynamicProsit#readme",
+  "devDependencies": {
+    "electron": "^3.0.10"
+  },
+  "dependencies": {
+    "generate-docx": "^2.1.0",
+    "jquery": "^3.3.1"
+  },
+  "build": {
+    "appId": "com.electron.DynamicProsit",
+    "productName": "DynamicProsit",
+    "copyright": "Copyright © 2018 Leafgard",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist",
+      "app": "."
+    }
+  }
+}
