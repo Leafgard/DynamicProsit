@@ -6,8 +6,7 @@
 
 <p align="center">
   <a href="https://forthebadge.com">
-    <img src="https://forthebadge.com/images/badges/made-with-javascript.svg"
-         alt="Javascript">
+    <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" alt="Javascript">
   </a>
   <a href="https://forthebadge.com">
       <img src="https://forthebadge.com/images/badges/powered-by-water.svg">
