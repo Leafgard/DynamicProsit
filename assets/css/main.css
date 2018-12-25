@@ -38,6 +38,10 @@ nav {
   -webkit-app-region: no-drag;
 }
 
+.nav-wrapper ul .close-window:hover {
+  background-color: red;
+}
+
 .prositForm {
   width: 100%;
   background-color: #FFF;
