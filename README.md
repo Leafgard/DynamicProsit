@@ -34,7 +34,7 @@
 
 * Interface simpliste
 * Permet de générer un .docx contenant les données du prosit aller
-* Compatible MacOS / Windows
+* Compatible MacOS / Windows et Linux !
 
 ## Installation
 
