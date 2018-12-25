@@ -6,8 +6,7 @@
 
 <p align="center">
   <a href="https://forthebadge.com">
-    <img src="https://forthebadge.com/images/badges/made-with-javascript.svg"
-         alt="Javascript">
+    <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" alt="Javascript">
   </a>
   <a href="https://forthebadge.com">
       <img src="https://forthebadge.com/images/badges/powered-by-water.svg">
@@ -35,7 +34,7 @@
 
 * Interface simpliste
 * Permet de générer un .docx contenant les données du prosit aller
-* Compatible MacOS (Pour l'instant !)
+* Compatible MacOS / Windows
 
 ## Installation
 

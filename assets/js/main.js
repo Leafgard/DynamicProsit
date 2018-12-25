@@ -86,7 +86,7 @@ function keepGoing(type) {
     message: 'Où souhaitez-vous enregistrer le Prosit Aller ?'
   }, (path) => {
 
-    let data = {
+    var data = {
       title: $('#prositTitle').val(),
       link: $('#prositLink').val(),
       animateur: $('#animateur').val(),
@@ -103,10 +103,10 @@ function keepGoing(type) {
       type: type
     }
   
-    let motCles = M.Chips.getInstance($('.motcles')).chipsData
-    let contraintes = M.Chips.getInstance($('.contraintes')).chipsData
-    let problematiques = M.Chips.getInstance($('.problematiques')).chipsData
-    let solutions = M.Chips.getInstance($('.solutions')).chipsData
+    var motCles = M.Chips.getInstance($('.motcles')).chipsData
+    var contraintes = M.Chips.getInstance($('.contraintes')).chipsData
+    var problematiques = M.Chips.getInstance($('.problematiques')).chipsData
+    var solutions = M.Chips.getInstance($('.solutions')).chipsData
     
     motCles.forEach((mot) => {
       data.motCles.push(mot.tag)

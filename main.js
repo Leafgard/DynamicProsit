@@ -9,12 +9,13 @@ const {
 let win
 function createWindow() {
   win = new BrowserWindow({
-    width: 900,
-    minWidth: 900,
-    height: 890,
-    minHeight: 890,
+    width: 800,
+    minWidth: 800,
+    height: 840,
+    minHeight: 840,
     frame: false
   })
+
   win.loadFile('views/index.html')
   //win.webContents.openDevTools()
 
