@@ -56,6 +56,8 @@ $(function() {
     secondaryPlaceholder: '+Piste',
   })
 
+  $('.tabs').tabs()
+
   $('.modal').modal({
     dismissible: true
   })

@@ -9,10 +9,10 @@ const {
 let win
 function createWindow() {
   win = new BrowserWindow({
-    width: 800,
-    minWidth: 800,
-    height: 840,
-    minHeight: 840,
+    width: 850,
+    minWidth: 850,
+    height: 525,
+    minHeight: 525,
     frame: false,
     icon: 'assets/img/DynamicProsit.png'
   })

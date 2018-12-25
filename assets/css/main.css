@@ -9,16 +9,12 @@ body {
 }
 
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
   background: #FFF;
   z-index: 999;
   box-shadow: none;
 }
 
 .container-fluid {
-  margin-top: 65px;
   width: 100vw;
 }
 
@@ -27,7 +23,7 @@ nav {
 }
 
 .chips .input {
-  width: 135px !important;
+  width: 100% !important;
 }
 
 .nav-wrapper > a, .nav-wrapper * {
@@ -43,6 +39,7 @@ nav {
 }
 
 .prositForm {
+  margin-top: 60px;
   width: 100%;
   background-color: #FFF;
   border-radius: 10px;
@@ -91,6 +88,18 @@ nav {
 
 .chip:focus {
   background-color: #1D976C !important;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active, .tabs .tab a {
+  color: #1D976C;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+  background-color: rgba(29, 151, 108, 0.2);
+}
+
+.tabs .indicator {
+  background-color: #1D976C; 
 }
 
 .generate {
