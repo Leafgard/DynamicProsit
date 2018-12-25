@@ -11,10 +11,10 @@
   <a href="https://forthebadge.com">
       <img src="https://forthebadge.com/images/badges/powered-by-water.svg">
   </a>
-  <a href="https://github.com/Leafgard/NodeGard/issues">
+  <a href="https://github.com/Leafgard/DynamicProsit/issues">
       <img src="https://img.shields.io/github/issues/Leafgard/DynamicProsit.svg?style=for-the-badge">
   </a>
-  <a href="https://github.com/Leafgard/NodeGard/stargazers">
+  <a href="https://github.com/Leafgard/DynamicProsit/stargazers">
       <img src="https://img.shields.io/github/stars/Leafgard/DynamicProsit.svg?style=for-the-badge">
   </a>
   <a href="https://paypal.me/Leafgard">

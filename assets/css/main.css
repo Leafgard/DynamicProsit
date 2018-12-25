@@ -34,6 +34,10 @@ nav {
   color: rgb(0, 0, 0, 0.4);
 }
 
+.nav-wrapper ul li a {
+  -webkit-app-region: no-drag;
+}
+
 .prositForm {
   width: 100%;
   background-color: #FFF;
