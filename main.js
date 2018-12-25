@@ -6,8 +6,6 @@ const {
   BrowserWindow
 } = require('electron')
 
-var path = require('path')
-
 let win
 function createWindow() {
   win = new BrowserWindow({
@@ -16,7 +14,7 @@ function createWindow() {
     height: 840,
     minHeight: 840,
     frame: false,
-    icon: path.join(__dirname, 'assets/img/DynamicProsit.png')
+    icon: 'assets/img/DynamicProsit.png'
   })
 
   win.loadFile('views/index.html')

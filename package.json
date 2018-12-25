@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/Leafgard/DynamicProsit#readme",
   "devDependencies": {
-    "electron": "^3.0.10"
+    "electron": "^4.0.0"
   },
   "dependencies": {
     "generate-docx": "^2.1.0",
