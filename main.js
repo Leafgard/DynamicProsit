@@ -13,7 +13,8 @@ function createWindow() {
     minWidth: 800,
     height: 840,
     minHeight: 840,
-    frame: false
+    frame: false,
+    icon: 'assets/img/DynamicProsit.png'
   })
 
   win.loadFile('views/index.html')
