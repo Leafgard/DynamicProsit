@@ -21,7 +21,7 @@
             <img src="../assets/img/DynamicProsit.png" alt="DynamicProsit" height="55" style="margin-top: 5px">
           </a>
           <ul class="left">
-            <li><a onClick=""><i class="material-icons">settings</i></a></li>
+            <li><a id="settings"><i class="material-icons">settings</i></a></li>
           </ul>
           <ul class="right">
             <li><a onClick="minimizeWindow()"><i class="material-icons">minimize</i></a></li>
@@ -135,6 +135,26 @@
       </div>
       <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Annuler</a>
+      </div>
+    </div>
+
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <form>
+          <h4>Configuration</h4>
+          <br>
+          <p>
+            <label>
+              <input type="checkbox" />
+              <span>Auto-complétion des mots-clés via Wikipédia ? (Bêta)</span>
+            </label>
+          </p>
+          <br>
+          <a disabled id="ownTemplate" href="#!" class="waves-effect waves-light btn-large generate"><i class="material-icons left">dashboard</i>Utiliser mon template</a>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Quitter</a>
       </div>
     </div>
     <!-- jQuery & MaterializeCSS Libs -->

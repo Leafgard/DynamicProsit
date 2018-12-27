@@ -61,6 +61,10 @@ $(function() {
   $('.modal').modal({
     dismissible: true
   })
+  
+  $('#settings').click(() => {
+    $('#modal2').modal('open')
+  })
 
 })
 
@@ -68,15 +72,15 @@ $( "form" ).submit(function(e) {
 
   e.preventDefault()
 
-  $('.modal').modal('open')
+  $('#modal1').modal('open')
 
   $('#docx').click(() => {
-    $('.modal').modal('close')
+    $('#modal1').modal('close')
     keepGoing('docx')
   })
 
   $('#pdf').click(() => {
-    $('.modal').modal('close')
+    $('#modal1').modal('close')
     keepGoing('pdf')
   })
 
