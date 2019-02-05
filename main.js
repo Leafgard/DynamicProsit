@@ -59,16 +59,16 @@ ipcMain.on('submitForm', function(event, data) {
   let solutionsW = ""
 
   d.motCles.forEach((mot) => {
-    motClesW = motClesW.concat(`- ${mot}\n`)
+    motClesW = motClesW.concat(`- ${mot}: \n`)
   })
   d.contraintes.forEach((mot) => {
-    contraintesW = contraintesW.concat(`- ${mot}\n`)
+    contraintesW = contraintesW.concat(`- ${mot}: \n`)
   })
   d.problematiques.forEach((mot) => {
-    problematiquesW = problematiquesW.concat(`- ${mot}\n`)
+    problematiquesW = problematiquesW.concat(`- ${mot}: \n`)
   })
   d.solutions.forEach((mot) => {
-    solutionsW = solutionsW.concat(`- ${mot}\n`)
+    solutionsW = solutionsW.concat(`- ${mot}: \n`)
   })
   
   const options = {
