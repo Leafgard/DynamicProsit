@@ -64,13 +64,13 @@ ipcMain.on('submitForm', function(event, data) {
     motClesW = motClesW.concat(`- ${mot}: \n`)
   })
   d.contraintes.forEach((mot) => {
-    contraintesW = contraintesW.concat(`- ${mot}: \n`)
+    contraintesW = contraintesW.concat(`- ${mot} \n`)
   })
   d.problematiques.forEach((mot) => {
-    problematiquesW = problematiquesW.concat(`- ${mot}: \n`)
+    problematiquesW = problematiquesW.concat(`- ${mot} \n`)
   })
   d.solutions.forEach((mot) => {
-    solutionsW = solutionsW.concat(`- ${mot}: \n`)
+    solutionsW = solutionsW.concat(`- ${mot} \n`)
   })
   for (let i = 1; i < d.livrables.length + 1; i++) {
     livrablesW = livrablesW.concat(i + `. ${d.livrables[i]} \n`) 
