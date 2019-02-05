@@ -57,34 +57,38 @@
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s3">
+            <div class="input-field col s6">
               <i class="material-icons prefix">account_circle</i>
               <input id="animateur" type="text" class="validate">
               <label for="animateur">Animateur</label>
             </div>
-            <div class="input-field col s3">
+            <div class="input-field col s6">
               <i class="material-icons prefix">account_circle</i>
               <input id="secretaire" type="text" class="validate">
               <label for="secretaire">Secrétaire</label>
             </div>
+          </div>
+          <div class="row">
             <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="scribe" type="text" class="validate">
+              <label for="scribe">Scribe</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="gestionnaire" type="text" class="validate">
+              <label for="gestionnaire">Gestionnaire</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
               <i class="material-icons prefix">short_text</i>
               <textarea id="contexte" class="materialize-textarea"></textarea>
               <label for="contexte">Contexte</label>
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s3">
-              <i class="material-icons prefix">account_circle</i>
-              <input id="scribe" type="text" class="validate">
-              <label for="scribe">Scribe</label>
-            </div>
-            <div class="input-field col s3">
-              <i class="material-icons prefix">account_circle</i>
-              <input id="gestionnaire" type="text" class="validate">
-              <label for="gestionnaire">Gestionnaire</label>
-            </div>
-            <div class="input-field col s6">
+            <div class="input-field col s12">
               <i class="material-icons prefix">short_text</i>
               <textarea id="generalisation" class="materialize-textarea"></textarea>
               <label for="generalisation">Généralisation</label>
@@ -119,6 +123,16 @@
             <div class="chips chips-placeholder input-field solutions"></div>
           </div>
         </div>
+        <div class="row">
+          <div class="col s12">
+            <div class="chips chips-placeholder input-field livrables"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <div class="chips chips-placeholder input-field actions"></div>
+          </div>
+        </div>
         </form>
 
       </div>
@@ -143,10 +157,19 @@
         <form>
           <h4>Configuration</h4>
           <br>
+          <div class="switch">
+            <label style="font-size: 1.4em; font-weight: 600; letter-spacing: 2px">
+              Pr<b>A</b>sit
+              <input type="checkbox">
+              <span class="lever"></span>
+              Pr<b>O</b>sit
+            </label>
+          </div>
+          <br>
           <p>
             <label>
               <input type="checkbox" />
-              <span>Auto-complétion des mots-clés via Wikipédia ? (Bêta)</span>
+              <span>Auto-complétion des mots-clés via Wikipédia ? (NOT WORKING)</span>
             </label>
           </p>
           <br>

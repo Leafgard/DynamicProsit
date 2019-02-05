@@ -56,6 +56,16 @@ $(function() {
     secondaryPlaceholder: '+Piste',
   })
 
+  $('.livrables').chips({
+    placeholder: 'Livrables',
+    secondaryPlaceholder: '+Livrable',
+  })
+
+  $('.actions').chips({
+    placeholder: 'Plan d\'action',
+    secondaryPlaceholder: '+Action',
+  })
+
   $('.tabs').tabs()
 
   $('.modal').modal({
@@ -105,6 +115,8 @@ function keepGoing(type) {
       contraintes: [],
       problematiques: [],
       solutions: [],
+      livrables: [],
+      actions: [],
       path: path,
       type: type
     }
@@ -113,6 +125,8 @@ function keepGoing(type) {
     var contraintes = M.Chips.getInstance($('.contraintes')).chipsData
     var problematiques = M.Chips.getInstance($('.problematiques')).chipsData
     var solutions = M.Chips.getInstance($('.solutions')).chipsData
+    var livrables = M.Chips.getInstance($('.livrables')).chipsData
+    var actions = M.Chips.getInstance($('.actions')).chipsData
     
     motCles.forEach((mot) => {
       data.motCles.push(mot.tag)
@@ -126,6 +140,13 @@ function keepGoing(type) {
     solutions.forEach((mot) => {
       data.solutions.push(mot.tag)
     })
+    livrables.forEach((mot) => {
+      data.livrables.push(mot.tag)
+    })
+    actions.forEach((mot) => {
+      data.actions.push(mot.tag)
+    })
+
 
     ipcRenderer.send('submitForm', JSON.stringify(data))
 

@@ -9,10 +9,10 @@ const {
 let win
 function createWindow() {
   win = new BrowserWindow({
-    width: 850,
-    minWidth: 850,
-    height: 525,
-    minHeight: 525,
+    width: 900,
+    minWidth: 900,
+    height: 800,
+    minHeight: 800,
     frame: false,
     icon: 'assets/img/DynamicProsit.png'
   })
@@ -57,6 +57,8 @@ ipcMain.on('submitForm', function(event, data) {
   let contraintesW = ""
   let problematiquesW = ""
   let solutionsW = ""
+  let livrablesW = ""
+  let actionsW = ""
 
   d.motCles.forEach((mot) => {
     motClesW = motClesW.concat(`- ${mot}: \n`)
@@ -69,6 +71,12 @@ ipcMain.on('submitForm', function(event, data) {
   })
   d.solutions.forEach((mot) => {
     solutionsW = solutionsW.concat(`- ${mot}: \n`)
+  })
+  for (let i = 1; i < d.livrables.length + 1; i++) {
+    livrablesW = livrablesW.concat(i + `. ${d.livrables[i]} \n`) 
+  }
+  d.actions.forEach((mot) => {
+    actionsW = actionsW.concat(`- ${mot} \n`)
   })
   
   const options = {
@@ -87,7 +95,9 @@ ipcMain.on('submitForm', function(event, data) {
         motCles: motClesW,
         contraintes: contraintesW,
         problematiques: problematiquesW,
-        solutions: solutionsW
+        solutions: solutionsW,
+        livrables: livrablesW,
+        actions: actionsW
       }
     },
     templateOptions: {
