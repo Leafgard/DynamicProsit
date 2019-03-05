@@ -30,6 +30,8 @@
   <a href="#license">License</a>
 </p>
 
+<p align="center"><img src="assets/img/example.png" alt="DynamicProsit"></p>
+
 ## Fonctionnalités
 
 * Interface simpliste
@@ -53,12 +55,6 @@ Ouvrez l'application et amusez-vous !
 * [jquery](https://www.npmjs.com/package/jquery)^3.3.1 - jQuery is a fast, small, and feature-rich JavaScript library
 * [electron-settings](https://www.npmjs.com/package/electron-settings)^3.2.0 - A simple persistent user settings framework for Electron
 * [material-design-icons](https://www.npmjs.com/package/material-design-icons)^3.0.1 - Material design icons are the official icon set from Google that are designed under the material design guidelines
-
-## Membres
-
-* **Yann SEGET** - *Auteur principal* - *dev@leafgard.fr*
-
-[https://github.com/Leafgard/DynamicProsit](https://github.com/Leafgard/DynamicProsit)
 
 ## License
 
