@@ -1,169 +1,66 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>DynamicProsit</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- MaterializeCSS, Material Icons & Custom CSS -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="../assets/css/main.css">
-</head>
-
-<body>
-  <header>
-    <div class="navbar-fixed">
-      <nav class="nav-extended">
-        <div class="nav-wrapper draggable">
-          <a href="#!" class="brand-logo center" disabled>
-            <img src="../assets/img/DynamicProsit.png" alt="DynamicProsit" height="55" style="margin-top: 5px">
-          </a>
-          <ul class="left">
-            <li><a id="settings"><i class="material-icons">settings</i></a></li>
-          </ul>
-          <ul class="right">
-            <li><a onClick="minimizeWindow()"><i class="material-icons">minimize</i></a></li>
-            <li><a onClick="maximizeWindow()"><i class="material-icons">fullscreen</i></a></li>
-            <li class="close-window"><a onClick="closeWindow()"><i class="material-icons">clear</i></a></li>
-          </ul>
-        </div>
-        <div class="nav-content">
-          <ul class="tabs">
-            <li class="tab"><a class="active" href="#uniques">Données uniques</a></li>
-            <li class="tab"><a href="#multiples">Données multiples</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <body class="container-fluid">
+<div class="row center">
+  <h3>Informations</h3>
+</div>
+<div class="row">
+  <form class="col s12" action="">
+    <input type="hidden" name="type" value="informations">
     <div class="row">
-
-      <div id="uniques" class="col s12 prositForm">
-        <form>
-          <div class="row">
-            <div class="input-field col s6">
-              <i class="material-icons prefix">title</i>
-              <input type="text" id="prositTitle" class="validate">
-              <label for="prositTitle">Titre du prosit</label>
-            </div>
-            <div class="input-field col s6">
-              <i class="material-icons prefix">link</i>
-              <input type="text" id="prositLink" class="validate">
-              <label for="prositLink">URL du prosit sur Moodle</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s3">
-              <i class="material-icons prefix">account_circle</i>
-              <input id="animateur" type="text" class="validate">
-              <label for="animateur">Animateur</label>
-            </div>
-            <div class="input-field col s3">
-              <i class="material-icons prefix">account_circle</i>
-              <input id="secretaire" type="text" class="validate">
-              <label for="secretaire">Secrétaire</label>
-            </div>
-            <div class="input-field col s6">
-              <i class="material-icons prefix">short_text</i>
-              <textarea id="contexte" class="materialize-textarea"></textarea>
-              <label for="contexte">Contexte</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s3">
-              <i class="material-icons prefix">account_circle</i>
-              <input id="scribe" type="text" class="validate">
-              <label for="scribe">Scribe</label>
-            </div>
-            <div class="input-field col s3">
-              <i class="material-icons prefix">account_circle</i>
-              <input id="gestionnaire" type="text" class="validate">
-              <label for="gestionnaire">Gestionnaire</label>
-            </div>
-            <div class="input-field col s6">
-              <i class="material-icons prefix">short_text</i>
-              <textarea id="generalisation" class="materialize-textarea"></textarea>
-              <label for="generalisation">Généralisation</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12">
-              <button type="submit" class="waves-effect waves-light btn-large generate"><i class="material-icons left">file_copy</i>
-                Générer le fichier</button>
-            </div>
-          </div>
-      </div>
-      <div id="multiples" class="col s12 prositForm">
-        
-        <div class="row">
-          <div class="col s12">
-            <div class="chips chips-placeholder input-field motcles"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <div class="chips chips-placeholder input-field contraintes"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <div class="chips chips-placeholder input-field problematiques"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <div class="chips chips-placeholder input-field solutions"></div>
-          </div>
-        </div>
-        </form>
-
-      </div>
-
-    </div>
-  </body>
-  <footer>
-    <div id="modal1" class="modal">
-      <div class="modal-content">
-        <h4>Sous quel format souhaitez-vous générer le prosit aller ?</h4>
-        <br>
-        <a disabled id="pdf" href="#!" class="waves-effect waves-light btn-large generate"><i class="material-icons left">lock</i>.PDF</a>
-        <a id="docx" href="#!" class="waves-effect waves-light btn-large generate" style="margin-left: 20px"><i class="material-icons left">edit</i>.DOCX</a>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Annuler</a>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">title</i>
+        <input placeholder="Virtualisation" id="p_title" name="p_title" type="text">
+        <label for="p_title">Titre du Prosit</label>
       </div>
     </div>
-
-    <div id="modal2" class="modal">
-      <div class="modal-content">
-        <form>
-          <h4>Configuration</h4>
-          <br>
-          <p>
-            <label>
-              <input type="checkbox" />
-              <span>Auto-complétion des mots-clés via Wikipédia ? (Bêta)</span>
-            </label>
-          </p>
-          <br>
-          <a disabled id="ownTemplate" href="#!" class="waves-effect waves-light btn-large generate"><i class="material-icons left">dashboard</i>Utiliser mon template</a>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Quitter</a>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">link</i>
+        <input placeholder="https://moodle-exia.cesi.fr/course/view.php?id=736" id="p_link" name="p_link" type="text">
+        <label for="p_link">Lien du Prosit sur Moodle</label>
       </div>
     </div>
-    <!-- jQuery & MaterializeCSS Libs -->
-    <script>
-      window.$ = window.jQuery = require('jquery');
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-  </footer>
-</body>
-
-</html>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">assignment</i>
+        <input placeholder="Allumer un feu" id="p_general" name="p_general" type="text">
+        <label for="p_general">Généralisation</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">assignment</i>
+        <input placeholder="Fred et Jammy cherchent la réponse à la vie" id="p_context" name="p_context" type="text">
+        <label for="p_context">Contexte</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">accessibility</i>
+        <input placeholder="John Doe" id="p_anim" name="p_anim" type="text">
+        <label for="p_anim">Animateur</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input placeholder="John Doe" id="p_scribe" name="p_scribe" type="text">
+        <label for="p_scribe">Scribe</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input placeholder="John Doe" id="p_gestion" name="p_gestion" type="text">
+        <label for="p_gestion">Gestionnaire</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input placeholder="John Doe" id="p_secretary" name="p_secretary" type="text">
+        <label for="p_secretary">Secrétaire</label>
+      </div>
+    </div>
+  </form>
+  <script>
+    viewModel = "informations"
+    Object.keys(prositData[viewModel]).forEach((info) => {
+      $(`#${info}`).val(prositData[viewModel][info])
+    })
+  </script>
+</div>

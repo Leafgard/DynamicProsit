@@ -1,105 +1,132 @@
-/**
- * Electron
- */
-const {
-  app,
-  BrowserWindow
-} = require('electron')
+// Modules to control application life and create native browser window
+const {app, BrowserWindow, dialog} = require('electron')
+const settings = require('electron-settings')
+const fs = require('fs')
+const path = require('path')
+const os = require('os')
 
-let win
-function createWindow() {
-  win = new BrowserWindow({
-    width: 850,
-    minWidth: 850,
-    height: 525,
-    minHeight: 525,
+if (!settings.has('init')) {
+  settings.set('init', true)
+  settings.set('theme', 'light')
+  settings.set('templateFile', path.resolve(`${__dirname}/templates/default.docx`))
+}
+
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let mainWindow
+
+function createWindow () {
+  // Create the browser window.
+  mainWindow = new BrowserWindow({
+    minWidth: 1201,
+    width: 1201,
+    height: 850,
     frame: false,
-    icon: 'assets/img/DynamicProsit.png'
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
 
-  win.loadFile('views/index.html')
-  //win.webContents.openDevTools()
+  // and load the index.html of the app.
+  mainWindow.loadFile('views/app.html')
 
-  win.on('closed', () => {
-    win = null
+  // Open the DevTools.
+  //mainWindow.webContents.openDevTools()
+
+  // Emitted when the window is closed.
+  mainWindow.on('closed', function () {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    mainWindow = null
   })
 }
 
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
 
-app.on('window-all-closed', () => {
-  // Sur macOS, il est commun pour une application et leur barre de menu
-  // de rester active tant que l'utilisateur ne quitte pas explicitement avec Cmd + Q
+// Quit when all windows are closed.
+app.on('window-all-closed', function () {
+  // On macOS it is common for applications and their menu bar
+  // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
     app.quit()
   }
 })
 
-app.on('activate', () => {
-  // Sur macOS, il est commun de re-créer une fenêtre de l'application quand
-  // l'icône du dock est cliquée et qu'il n'y a pas d'autres fenêtres d'ouvertes.
-  if (win === null) {
+app.on('activate', function () {
+  // On macOS it's common to re-create a window in the app when the
+  // dock icon is clicked and there are no other windows open.
+  if (mainWindow === null) {
     createWindow()
   }
 })
 
-/**
- * Extras
- */
+// In this file you can include the rest of your app's specific main process
+// code. You can also put them in separate files and require them here.
+
 const ipcMain = require('electron').ipcMain
-const generateDocx = require('generate-docx')
+var JSZip = require('jszip')
+var Docxtemplater = require('docxtemplater')
 
-ipcMain.on('submitForm', function(event, data) {
-
-  let d = JSON.parse(data)
-
-  let motClesW = ""
-  let contraintesW = ""
-  let problematiquesW = ""
-  let solutionsW = ""
-
-  d.motCles.forEach((mot) => {
-    motClesW = motClesW.concat(`- ${mot}\n`)
-  })
-  d.contraintes.forEach((mot) => {
-    contraintesW = contraintesW.concat(`- ${mot}\n`)
-  })
-  d.problematiques.forEach((mot) => {
-    problematiquesW = problematiquesW.concat(`- ${mot}\n`)
-  })
-  d.solutions.forEach((mot) => {
-    solutionsW = solutionsW.concat(`- ${mot}\n`)
-  })
-  
-  const options = {
-    template: {
-      filePath: app.getAppPath() + '/templates/template.docx',
-      data: {
-        title: d.title,
-        link: d.link,
-        animateur: d.animateur,
-        secretaire: d.secretaire,
-        scribe: d.scribe,
-        date: new Date().toLocaleDateString(),
-        gestionnaire: d.gestionnaire,
-        contexte: d.contexte,
-        generalisation: d.generalisation,
-        motCles: motClesW,
-        contraintes: contraintesW,
-        problematiques: problematiquesW,
-        solutions: solutionsW
-      }
-    },
-    templateOptions: {
-      linebreaks: true
-    },
-    save: {
-      filePath: d.path
+ipcMain.on('submit', function(event, data) {
+  let type = JSON.parse(data).type
+  let prositData = JSON.parse(data).data
+  var content = fs
+    .readFileSync(settings.get('templateFile'), 'binary')
+  var zip = new JSZip(content)
+  var doc = new Docxtemplater()
+  doc.loadZip(zip)
+  doc.setOptions({
+    nullGetter: function() {
+      return ""
     }
+  })
+
+  let pInfos = prositData.informations
+  doc.setData({
+    title: pInfos.p_title,
+    link: pInfos.p_link,
+    generalization: pInfos.p_general,
+    context: pInfos.p_context,
+    animator: pInfos.p_anim,
+    scribe: pInfos.p_scribe,
+    administrator: pInfos.p_gestion,
+    secretary: pInfos.p_secretary,
+    keywords: prositData.keywords,
+    contraints: prositData.contraints,
+    problematics: prositData.problematics,
+    solutions: prositData.solutions,
+    deliverables: prositData.deliverables,
+    actions: prositData.actionsPlan
+  })
+
+  try {
+    doc.render()
+  }
+  catch (error) {
+      var e = {
+          message: error.message,
+          name: error.name,
+          stack: error.stack,
+          properties: error.properties,
+      }
+      console.log(JSON.stringify({error: e}));
+      // The error thrown here contains additional information when logged with JSON.stringify (it contains a property object).
+      throw error;
   }
 
-  generateDocx(options)
-  .then()
-  .catch((err) => win.webContents.send('error', err))
+  var buf = doc.getZip()
+    .generate({type: 'nodebuffer'});
+
+  dialog.showSaveDialog({
+    title: 'Où souhaitez-vous enregistrer le Prosit ?',
+    defaultPath: `${os.homedir}/Prosit.docx`,
+    buttonLabel: 'Enregistrer'
+  }, (path) => {
+    fs.writeFileSync(path, buf);
+  })
 
 })

@@ -1,0 +1,43 @@
+<div class="row center">
+  <h3>À propos</h3>
+</div>
+<div class="row" style="text-align: justify; text-justify: inter-word">
+  <p>
+    <h5>Version de <span class="dp-violet-text">DynamicProsit</span>: <b>v2.0</b></h5>
+    <b style="font-size: 17px">Version de NodeJS: v<span id="nodeVer"></span></b>
+    <br>
+    <b style="font-size: 17px">Version de Chromium: v<span id="chromeVer"></span></b>
+    <br>
+    <b style="font-size: 17px">Version d'Electron: v<span id="elecVer"></span></b>
+    <br>
+    <br>
+    <h5><span class="dp-violet-text">MIT License</span></h5>
+    Copyright (c) 2018 Yann Seget
+    <br>
+    <br>
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    <br>
+    <br>
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    <br>
+    <br>
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+  </p>
+  <script>
+    $('#nodeVer').text(process.versions.node)
+    $('#chromeVer').text(process.versions.chrome)
+    $('#elecVer').text(process.versions.electron)
+  </script>
+</div>

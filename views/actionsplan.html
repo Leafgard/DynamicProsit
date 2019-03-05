@@ -1,0 +1,36 @@
+<div class="row center">
+  <h3>Plan d'action</h3>
+</div>
+<div class="row">
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">format_list_numbered</i>
+      <input placeholder="Étudier le CSS" id="p_action" type="text">
+      <label for="p_action">Ajouter un élément au plan d'action</label>
+    </div>
+  </div>
+  <br>
+  <table id="actionsPlan" class="highlight centered">
+    <thead>
+      <tr>
+        <th>Ordre du plan</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+    $('#actionsPlan tbody').sortable({
+        cancel: "a,button"
+      })
+      .on('sortupdate', (e, ui) => {
+        let newOrder = []
+        $('tbody tr').toArray().forEach((tr) => {
+          newOrder.push($(tr).find('td').first().html())
+        })
+        prositData[viewModel] = newOrder
+      })
+    viewModel = "actionsPlan"
+    loadModelData()
+  </script>
+</div>

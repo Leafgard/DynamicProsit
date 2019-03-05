@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/img/DynamicProsit.png" height="128" alt="DynamicProsit"></p>
+<p align="center"><img src="build/icon.png" height="128" alt="DynamicProsit"></p>
 <h3 align="center">DynamicProsit</h3>
 <p align="center"><i>Interface d'édition de Prosits</i><p>
 
@@ -33,8 +33,10 @@
 ## Fonctionnalités
 
 * Interface simpliste
-* Permet de générer un .docx contenant les données du prosit aller
-* Compatible MacOS / Windows et Linux !
+* Permet de générer un document Word (.docx) contenant les données du Prosit
+* Possibilité de réorganiser le plan d'action
+* Thème clair / foncé
+* Compatibilité MacOS / Windows et Linux !
 
 ## Installation
 
@@ -46,9 +48,11 @@ Ouvrez l'application et amusez-vous !
 
 ## Conçu avec
 
-* [electron](https://www.electronjs.org)^3.0.10 - Build cross platform desktop apps with JavaScript, HTML & CSS
-* [generate-docx](https://www.npmjs.com/package/generate-docx)^2.1.0 - Generates .docx from template and data
+* [electron](https://www.electronjs.org)^4.0.6 - Build cross platform desktop apps with JavaScript, HTML & CSS
+* [docxtemplater](https://www.npmjs.com/package/docxtemplater)^3.9.9 - docxtemplater is a library to generate docx/pptx documents from a docx/pptx template.
 * [jquery](https://www.npmjs.com/package/jquery)^3.3.1 - jQuery is a fast, small, and feature-rich JavaScript library
+* [electron-settings](https://www.npmjs.com/package/electron-settings)^3.2.0 - A simple persistent user settings framework for Electron
+* [material-design-icons](https://www.npmjs.com/package/material-design-icons)^3.0.1 - Material design icons are the official icon set from Google that are designed under the material design guidelines
 
 ## Membres
 

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>DynamicProsit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/materialize.css">
+  <link rel="stylesheet" href="../node_modules/material-design-icons/iconfont/material-icons.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+
+  <nav class="z-depth-0">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">DynamicProsit</a>
+      <ul class="right">
+        <li><a id="minimize" href="#!"><i class="material-icons">remove</i></a></li>
+        <li><a id="maximize" href="#!"><i class="material-icons">fullscreen</i></a></li>
+        <li><a id="close" href="#!"><i class="material-icons">clear</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul id="navLinks" class="sidenav sidenav-fixed dark text-white">
+    <h2 class="center dp-violet-text" style="font-family: 'PermanentMarker'; margin: 25px 0 25px 0">DP</h2>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Informations générales</a></li>
+    <li class="activeLink"><a class="waves-effect lighten-1" href="index.html"><i class="material-icons">info</i>Informations</a></li>
+    <li><a class="waves-effect" href="keywords.html"><i class="material-icons">vpn_key</i>Mots-clés</a></li>
+    <li><a class="waves-effect" href="contraints.html"><i class="material-icons">lock</i>Contraintes</a></li>
+    <li><a class="waves-effect" href="problematics.html"><i class="material-icons">help</i>Problématiques</a></li>
+    <li><a class="waves-effect" href="solutions.html"><i class="material-icons">bookmark</i>Pistes de solutions</a></li>
+    <li><a class="waves-effect" href="deliverables.html"><i class="material-icons">playlist_add_check</i>Livrables</a></li>
+    <li><a class="waves-effect" href="actionsplan.html"><i class="material-icons">format_list_numbered</i>Plan d'action</a></li>
+    <br>
+    <div class="center">
+      <a id="generate" class="btn-large dp-violet lighten-1 waves-effect" href="#!"><i class="material-icons left">create</i>Générer</a>
+    </div>
+    <br>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">DynamicProsit</a></li>
+    <li><a class="waves-effect" href="settings.html"><i class="material-icons">settings</i>Paramètres</a></li>
+    <li><a class="waves-effect" href="about.html"><i class="material-icons">info</i>À propos</a></li>
+
+    <div style="position: absolute; bottom: 70px; left: 48px">
+      <h6><i class="material-icons tiny">create</i> with <i class="material-icons tiny red-text">favorite</i> by <span
+          class="dp-violet-text">@Leafgard</span></h6>
+    </div>
+
+  </ul>
+
+  <main>
+    <div class="container">
+
+    </div>
+  </main>
+
+  <div id="generateModal" class="modal bottom-sheet">
+    <div class="modal-content">
+      <h4>Génération du Prosit</h4>
+      <p>Veuillez cocher les options souhaitées</p>
+      <p>
+        <label style="font-size: 20px">
+          <input type="checkbox" class="filled-in" checked="checked" />
+          <span>Utiliser Wikipédia pour l'autocomplétion des mots-clés (Bêta)</span>
+        </label>
+      </p>
+      <p>
+        <label style="font-size: 20px">
+          <input type="checkbox" class="filled-in" disabled />
+          <span>Créer également un fichier .XML permettant une possible modification du Prosit généré</span>
+        </label>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a id="pdf" href="#!" class="waves-effect btn dp-violet" disabled>Générer au format .PDF</a>
+      <a id="docx" href="#!" class="waves-effect btn dp-violet">Générer au format .DOCX</a>
+    </div>
+  </div>
+
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    window.$ = window.jQuery = require('jquery')
+  </script>
+  <script src="../assets/js/bin/jquery-ui.js"></script>
+  <script src="../assets/js/bin/materialize.min.js"></script>
+  <script src="../assets/js/bin/main.js"></script>
+</body>
+
+</html>
