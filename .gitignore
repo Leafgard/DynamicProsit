@@ -2,9 +2,6 @@
 # Created by https://www.gitignore.io/api/node
 # Edit at https://www.gitignore.io/?templates=node
 
-### Build ###
-dist
-
 ### Node ###
 # Logs
 logs
@@ -88,3 +85,9 @@ typings/
 .dynamodb/
 
 # End of https://www.gitignore.io/api/node
+
+# Distribution
+dist
+
+# Design
+*.gvdesign
