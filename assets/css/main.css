@@ -1,111 +1,52 @@
-@import url('https://fonts.googleapis.com/css?family=Oxygen');
-
-* {
-  font-family: 'Oxygen', serif;
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../fonts/Quicksand-Medium.ttf');
 }
 
-body {
-  text-align: center;
+@font-face {
+    font-family: 'PermanentMarker';
+    src: url('../fonts/PermanentMarker-Regular.ttf');
+}
+
+* {
+    font-family: 'Quicksand';
+    user-select: none;
+}
+
+nav, main {
+    padding-left: 300px;
+}
+
+main {
+  min-height: calc(100vh - 84px);
+}
+
+.container {
+  margin-top: 0;
+  padding-top: 15px;
 }
 
 nav {
-  background: #FFF;
-  z-index: 999;
-  box-shadow: none;
+    -webkit-app-region: drag;
 }
 
-.container-fluid {
-  width: 100vw;
+.sidenav, nav ul li > a {
+    -webkit-app-region: no-drag;
 }
 
-.draggable {
-  -webkit-app-region: drag;
+main {
+  background-color: rgb(248,248,248);
 }
 
-.chips .input {
-  width: 100% !important;
+.activeLink {
+    border-right: 3px solid #731DD8;
+    background-color: rgba(0, 0, 0, 0.07);
 }
 
-.nav-wrapper > a, .nav-wrapper * {
-  color: rgb(0, 0, 0, 0.4);
+.activeLink a, .activeLink i {
+    color: #731DD8 !important;
 }
 
-.nav-wrapper ul li a {
-  -webkit-app-region: no-drag;
-}
-
-.nav-wrapper ul .close-window:hover {
-  background-color: #D32F2F;
-}
-
-.prositForm {
-  margin-top: 60px;
-  width: 100%;
-  background-color: #FFF;
-  border-radius: 10px;
-}
-
-.input-field .prefix.active {
-  color: #1D976C !important;
-}
-
-.input-field input[type=text]:focus + label {
-  color: #1D976C !important;
-  box-shadow: none !important;
-}
-
-.input-field textarea:focus + label {
-  color: #1D976C !important;
-  box-shadow: none !important;
-}
-
-.input-field input[type=text]:focus {
-  border-bottom: 1px solid #1D976C !important;
-  box-shadow: none !important;
-}
-
-.input-field textarea:focus {
-  border-bottom: 1px solid #1D976C !important;
-  box-shadow: none !important;
-}
-
-.nav-wrapper a i {
-  transition: color 300ms ease-in-out;
-}
-
-.nav-wrapper a:hover i {
-  color: #FFF !important;
-}
-
-.chips {
-  text-align: left;
-}
-
-.chips.focus {
-  border-bottom: 1px solid #1D976C !important;
-  box-shadow: none !important;
-}
-
-.chip:focus {
-  background-color: #1D976C !important;
-}
-
-.tabs .tab a:hover, .tabs .tab a.active, .tabs .tab a {
-  color: #1D976C;
-}
-
-.tabs .tab a:focus, .tabs .tab a:focus.active {
-  background-color: rgba(29, 151, 108, 0.2);
-}
-
-.tabs .indicator {
-  background-color: #1D976C; 
-}
-
-.generate {
-  background: #1D976C;
-}
-
-.generate:first-child {
-  margin-right: 20px;
+#navLinks, html, main, .divider {
+  transition: background-color 200ms ease-in-out;
 }

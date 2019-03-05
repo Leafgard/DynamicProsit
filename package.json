@@ -1,11 +1,31 @@
 {
   "name": "dynamicprosit",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Interface d'édition de Prosits",
   "main": "main.js",
+  "build": {
+    "appId": "com.electron.DynamicProsit",
+    "productName": "DynamicProsit",
+    "copyright": "Copyright © 2019 Leafgard",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist",
+      "app": "."
+    }
+  },
+  "dependencies": {
+    "docxtemplater": "^3.9.9",
+    "electron-settings": "^3.2.0",
+    "jquery": "^3.3.1",
+    "jszip": "^2.6.1",
+    "material-design-icons": "^3.0.1"
+  },
+  "devDependencies": {
+    "electron": "^4.0.6"
+  },
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -16,22 +36,5 @@
   "bugs": {
     "url": "https://github.com/Leafgard/DynamicProsit/issues"
   },
-  "homepage": "https://github.com/Leafgard/DynamicProsit#readme",
-  "devDependencies": {
-    "electron": "^3.0.10"
-  },
-  "dependencies": {
-    "generate-docx": "^2.1.0",
-    "jquery": "^3.3.1"
-  },
-  "build": {
-    "appId": "com.electron.DynamicProsit",
-    "productName": "DynamicProsit",
-    "copyright": "Copyright © 2018 Leafgard",
-    "directories": {
-      "buildResources": "build",
-      "output": "dist",
-      "app": "."
-    }
-  }
+  "homepage": "https://github.com/Leafgard/DynamicProsit#readme"
 }

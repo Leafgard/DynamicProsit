@@ -1,0 +1,34 @@
+<div class="row center">
+  <h3>Paramètres</h3>
+</div>
+<div class="row">
+  <div class="switch center">
+    <label class="black-text settingsLabel" style="font-size: 20px">
+      Thème clair
+      <input type="checkbox">
+      <span class="lever"></span>
+      Thème sombre
+    </label>
+  </div>
+  <br>
+  <p>
+    <label style="font-size: 20px">
+      <input type="checkbox" class="filled-in" disabled />
+      <span>Envoyer anonymement des données permettant l'amélioration de l'application (Rapports de bugs, etc...)</span>
+    </label>
+  </p>
+  <script>
+    if (settings.get('theme') == 'dark') {
+      $(".switch").find("input[type=checkbox]").prop('checked', true)
+    }
+    $(".switch").find("input[type=checkbox]").on("change", function () {
+      var status = $(this).prop('checked');
+      settings.set('theme', status ? 'dark' : 'light')
+      if (status) {
+        $('head').append('<link id="theme" rel="stylesheet" href="../assets/css/dark-theme.css">')
+      } else {
+        $('#theme').remove()
+      }
+    })
+  </script>
+</div>
