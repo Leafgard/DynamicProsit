@@ -68,13 +68,13 @@
       <p>Veuillez cocher les options souhaitées</p>
       <p>
         <label style="font-size: 20px">
-          <input type="checkbox" class="filled-in" checked="checked" />
+          <input name="wiki" type="checkbox" class="filled-in"/>
           <span>Utiliser Wikipédia pour l'autocomplétion des mots-clés (Bêta)</span>
         </label>
       </p>
       <p>
         <label style="font-size: 20px">
-          <input type="checkbox" class="filled-in" disabled />
+          <input name="xml" type="checkbox" class="filled-in" disabled />
           <span>Créer également un fichier .XML permettant une possible modification du Prosit généré</span>
         </label>
       </p>
@@ -92,6 +92,15 @@
   <script src="../assets/js/bin/jquery-ui.js"></script>
   <script src="../assets/js/bin/materialize.min.js"></script>
   <script src="../assets/js/bin/main.js"></script>
+  <script>
+    if (settings.get('wiki') == true) {
+      $("input[name=wiki]").prop('checked', true)
+    }
+    $("input[name=wiki]").on("change", function () {
+      var status = $(this).prop('checked');
+      settings.set('wiki', status ? true : false)
+    })
+  </script>
 </body>
 
 </html>

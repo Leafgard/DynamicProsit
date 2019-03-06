@@ -1,6 +1,7 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, dialog} = require('electron')
 const settings = require('electron-settings')
+const request = require('request')
 const fs = require('fs')
 const path = require('path')
 const os = require('os')
@@ -20,7 +21,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     minWidth: 1201,
     width: 1201,
-    height: 850,
+    minHeight: 900,
+    height: 900,
     frame: false,
     webPreferences: {
       nodeIntegration: true
@@ -74,6 +76,42 @@ var Docxtemplater = require('docxtemplater')
 ipcMain.on('submit', function(event, data) {
   let type = JSON.parse(data).type
   let prositData = JSON.parse(data).data
+
+  if (settings.get('wiki') == true) {
+    let requests = []
+    let definitions = {}
+    prositData.keywords.forEach(key => {
+      requests.push(
+        new Promise((res, rej) => {
+          request(encodeURI(`https://fr.wikipedia.org/api/rest_v1/page/summary/${key}`), (err, resp, body) => {
+            if (resp.statusCode == 200) {
+              res({
+                keyword: key,
+                definition: JSON.parse(body).extract
+              })
+            } else {
+              res({
+                keyword: key,
+                definition: undefined
+              })
+            }
+          })
+        })
+      )
+    })
+    Promise.all(requests).then((data) => {
+      generateDOCX(prositData, data)
+    }).catch(err => {
+      console.error(err)
+    })
+  } else {
+    generateDOCX(prositData)
+  }
+
+})
+
+function generateDOCX(prositData, keywords = false) {
+  
   var content = fs
     .readFileSync(settings.get('templateFile'), 'binary')
   var zip = new JSZip(content)
@@ -85,7 +123,15 @@ ipcMain.on('submit', function(event, data) {
     }
   })
 
-  let pInfos = prositData.informations
+  pInfos = prositData.informations
+
+  if (!keywords) {
+    keywords = []
+    prositData.keywords.forEach(key => {
+      keywords.push({keyword: key})
+    })
+  }
+
   doc.setData({
     title: pInfos.p_title,
     link: pInfos.p_link,
@@ -95,7 +141,7 @@ ipcMain.on('submit', function(event, data) {
     scribe: pInfos.p_scribe,
     administrator: pInfos.p_gestion,
     secretary: pInfos.p_secretary,
-    keywords: prositData.keywords,
+    keywords: keywords,
     contraints: prositData.contraints,
     problematics: prositData.problematics,
     solutions: prositData.solutions,
@@ -128,5 +174,4 @@ ipcMain.on('submit', function(event, data) {
   }, (path) => {
     fs.writeFileSync(path, buf);
   })
-
-})
+}
