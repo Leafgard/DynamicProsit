@@ -2,8 +2,6 @@
 <h3 align="center">DynamicProsit</h3>
 <p align="center"><i>Interface d'édition de Prosits</i><p>
 
-
-
 <p align="center">
   <a href="https://forthebadge.com">
     <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" alt="Javascript">
@@ -56,6 +54,7 @@ Ouvrez l'application et amusez-vous !
 * [jquery](https://www.npmjs.com/package/jquery)^3.3.1 - jQuery is a fast, small, and feature-rich JavaScript library
 * [electron-settings](https://www.npmjs.com/package/electron-settings)^3.2.0 - A simple persistent user settings framework for Electron
 * [material-design-icons](https://www.npmjs.com/package/material-design-icons)^3.0.1 - Material design icons are the official icon set from Google that are designed under the material design guidelines
+* [moment](https://momentjs.com/)^2.24.0 - Parse, validate, manipulate, and display dates and times in JavaScript.
 
 ## License
 
