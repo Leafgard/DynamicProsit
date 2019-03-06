@@ -37,6 +37,7 @@
 * Interface simpliste
 * Permet de générer un document Word (.docx) contenant les données du Prosit
 * Possibilité de réorganiser le plan d'action
+* Possible auto-complétion des mots-clés via l'API de Wikipédia (Bêta)
 * Thème clair / foncé
 * Compatibilité MacOS / Windows et Linux !
 
