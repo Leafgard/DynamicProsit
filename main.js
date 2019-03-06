@@ -2,9 +2,12 @@
 const {app, BrowserWindow, dialog} = require('electron')
 const settings = require('electron-settings')
 const request = require('request')
+const moment = require('moment')
 const fs = require('fs')
 const path = require('path')
 const os = require('os')
+
+moment.locale('fr', require('./config/moment.locale.fr'))
 
 if (!settings.has('init')) {
   settings.set('init', true)
@@ -135,6 +138,7 @@ function generateDOCX(prositData, keywords = false) {
   doc.setData({
     title: pInfos.p_title,
     link: pInfos.p_link,
+    date: moment().format('LLLL'),
     generalization: pInfos.p_general,
     context: pInfos.p_context,
     animator: pInfos.p_anim,
