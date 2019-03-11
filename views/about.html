@@ -3,7 +3,7 @@
 </div>
 <div class="row" style="text-align: justify; text-justify: inter-word">
   <p>
-    <h5>Version de <span class="dp-violet-text">DynamicProsit</span>: <b>v2.0</b></h5>
+    <h5>Version de <span class="dp-violet-text">DynamicProsit</span>: <b><span id="dpVer"></span></b></h5>
     <b style="font-size: 17px">Version de NodeJS: v<span id="nodeVer"></span></b>
     <br>
     <b style="font-size: 17px">Version de Chromium: v<span id="chromeVer"></span></b>
@@ -36,6 +36,7 @@
     SOFTWARE.
   </p>
   <script>
+    $('#dpVer').text(`v${version}`)
     $('#nodeVer').text(process.versions.node)
     $('#chromeVer').text(process.versions.chrome)
     $('#elecVer').text(process.versions.electron)

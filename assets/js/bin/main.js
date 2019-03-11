@@ -1,5 +1,6 @@
 // Met à jour l'UI avec les règlages
 const settings = require('electron-settings')
+const version = "2.2.1"
 
 if (settings.get('theme') == 'dark') {
   $('head').append('<link id="theme" rel="stylesheet" href="../assets/css/dark-theme.css">')

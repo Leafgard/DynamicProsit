@@ -91,3 +91,5 @@ dist
 
 # Design
 *.gvdesign
+
+.DS_Store
