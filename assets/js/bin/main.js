@@ -73,10 +73,20 @@ $(document).ready(() => {
             }
           }
         })
+        // Remove item on click
         $('tbody').on('click', '#del', function () {
           let td = $(this).parent()
           let tr = td.parent()
           removeElem(tr.find("td:first").html())
+          tr.remove()
+        })
+        // Modify item on click
+        $('tbody').on('click', '#mod', function () {
+          let td = $(this).parent()
+          let tr = td.parent()
+          let text = tr.find("td:first").html()
+          $('#p_keyw, #p_contraint, #p_problematic, #p_solution, #p_deliverable, #p_action').val(text).focus()
+          removeElem(text)
           tr.remove()
         })
       }).hide().fadeIn()
@@ -109,7 +119,7 @@ function loadModelData() {
 }
 
 function addElem(e) {
-  $('tbody').append(`<tr><td>${e}</td><td><a id="del" class="btn-small dp-rose lighten-1" href="#!"><i class="material-icons">clear</i></a></td></tr>`)
+  $('tbody').append(`<tr><td>${e}</td><td><a id="mod" class="btn-small dp-rose lighten-1" href="#!"><i class="material-icons">edit</i></a> <a id="del" class="btn-small dp-rose darken-1" href="#!"><i class="material-icons">clear</i></a></td></tr>`)
 }
 
 function removeElem(e) {
