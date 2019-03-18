@@ -1,5 +1,5 @@
 <div class="row center">
-  <h3>Plan d'action</h3>
+  <h4>Plan d'action</h4>
 </div>
 <div class="row">
   <div class="row">
@@ -19,18 +19,4 @@
     </thead>
     <tbody></tbody>
   </table>
-  <script>
-    $('#actionsPlan tbody').sortable({
-        cancel: "a,button"
-      })
-      .on('sortupdate', (e, ui) => {
-        let newOrder = []
-        $('tbody tr').toArray().forEach((tr) => {
-          newOrder.push($(tr).find('td').first().html())
-        })
-        prositData[viewModel] = newOrder
-      })
-    viewModel = "actionsPlan"
-    loadModelData()
-  </script>
 </div>
