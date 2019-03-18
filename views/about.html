@@ -1,14 +1,14 @@
 <div class="row center">
-  <h3>À propos</h3>
+  <h4>À propos</h4>
 </div>
-<div class="row" style="text-align: justify; text-justify: inter-word">
+<div class="row" style="font-size: 13px; text-align: justify; text-justify: inter-word">
   <p>
     <h5>Version de <span class="dp-violet-text">DynamicProsit</span>: <b><span id="dpVer"></span></b></h5>
-    <b style="font-size: 17px">Version de NodeJS: v<span id="nodeVer"></span></b>
+    Version de <span class="dp-violet-text">NodeJS</span>: <b>v<span id="nodeVer"></span></b>
     <br>
-    <b style="font-size: 17px">Version de Chromium: v<span id="chromeVer"></span></b>
+    Version de <span class="dp-violet-text">Chromium</span>: <b>v<span id="chromeVer"></span></b>
     <br>
-    <b style="font-size: 17px">Version d'Electron: v<span id="elecVer"></span></b>
+    Version d'<span class="dp-violet-text">Electron</span>: <b>v<span id="elecVer"></span></b>
     <br>
     <br>
     <h5><span class="dp-violet-text">MIT License</span></h5>
@@ -35,10 +35,10 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
   </p>
-  <script>
-    $('#dpVer').text(`v${version}`)
-    $('#nodeVer').text(process.versions.node)
-    $('#chromeVer').text(process.versions.chrome)
-    $('#elecVer').text(process.versions.electron)
-  </script>
+  <br>
+  <div class="center">
+    <a onclick="shell.openExternal('https://paypal.me/Leafgard')" class="btn-large waves-effect waves-dark" style="background-color: #009cde">
+      <i class="material-icons left white-text">monetization_on</i> Me soutenir dans le développement de ce projet
+    </a>
+  </div>
 </div>

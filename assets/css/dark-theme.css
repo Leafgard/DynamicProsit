@@ -2,7 +2,7 @@
   background-color: #202225 !important;
 }
 
-#navLinks *, main *, .modal {
+#navLinks *, main *, .modal, .modal input {
   color: #BBB;
 }
 
@@ -24,6 +24,10 @@ table.highlight>tbody>tr:hover {
 
 .divider {
   background-color: #2f3136;
+}
+
+.collection-item {
+  background-color: #202225 !important;
 }
 
 html, main {

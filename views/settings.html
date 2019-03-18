@@ -1,5 +1,5 @@
 <div class="row center">
-  <h3>Paramètres</h3>
+  <h4>Paramètres</h4>
 </div>
 <div class="row">
   <div class="switch center">
@@ -11,24 +11,9 @@
     </label>
   </div>
   <br>
-  <p>
-    <label style="font-size: 20px">
-      <input type="checkbox" class="filled-in" disabled />
-      <span>Envoyer anonymement des données permettant l'amélioration de l'application (Rapports de bugs, etc...)</span>
-    </label>
-  </p>
-  <script>
-    if (settings.get('theme') == 'dark') {
-      $(".switch").find("input[type=checkbox]").prop('checked', true)
-    }
-    $(".switch").find("input[type=checkbox]").on("change", function () {
-      var status = $(this).prop('checked');
-      settings.set('theme', status ? 'dark' : 'light')
-      if (status) {
-        $('head').append('<link id="theme" rel="stylesheet" href="../assets/css/dark-theme.css">')
-      } else {
-        $('#theme').remove()
-      }
-    })
-  </script>
+  <h5>Choix du modèle</h5>
+  <ul id="models" class="collection" style="border-radius: 5px"></ul>
+  <a id="addTemplate" class="waves-effect waves-dark btn-large dp-violet lighten-1 white-text"><i class="material-icons left">note_add</i>Ajouter
+    un modèle</a>
 </div>
+
