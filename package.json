@@ -1,6 +1,6 @@
 {
   "name": "dynamicprosit",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Interface d'édition de Prosits",
   "main": "main.js",
   "build": {

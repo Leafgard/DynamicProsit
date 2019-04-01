@@ -42,7 +42,7 @@ module.exports = new ( class Prosit {
         )
       })
       Promise.all(requests).then(keywords => {
-        this.generate(type, pData, keywords, event)
+        this.generate(type, pData, event, keywords)
       }).catch(err => console.error(err))
     } else {
       this.generate(type, pData, event)
@@ -55,7 +55,7 @@ module.exports = new ( class Prosit {
    * @param {object} data Prosit's data
    * @param {bool} keywords Wikipedia autocomplete switch
    */
-  generate(type, data, keywords = false, event) {
+  generate(type, data, event, keywords = false) {
     // Document initialisation
     let zip = new JSZip(fs.readFileSync(Store.get('templates')[Store.get('templateId')].path, 'binary'))
     let doc = new Docxtemplater()
