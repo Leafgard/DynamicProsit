@@ -23,7 +23,7 @@ const Prosit = require('./src/Prosit')
  * Settings
  */
 
-const version = '3.0.0'
+const version = '3.0.#'
 
 // Initial configuration
 if (!Store.has('version') || Store.get('version') != version) {
