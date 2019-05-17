@@ -11,15 +11,7 @@ const ipcRenderer = require('electron').ipcRenderer
 
 if (Store.get('theme') == 'dark') $('head').append('<link id="theme" rel="stylesheet" href="../assets/css/dark-theme.css">')
 
-const prositData = {
-  informations: {},
-  keywords: [],
-  contraints: [],
-  problematics: [],
-  solutions: [],
-  deliverables: [],
-  actionsPlan: []
-}
+const prositData = Store.get('autoSave')
 
 $(document).ready(() => {
 
@@ -39,6 +31,11 @@ $(document).ready(() => {
   // Load index into container
   $('.container').load('index.html', () => {
     M.updateTextFields()
+    if (typeof prositData['informations'] != 'undefined') {
+      Object.keys(prositData['informations']).forEach((info) => {
+        $(`#${info}`).val(prositData['informations'][info])
+      })
+    }
   })
 
   // Error displaying
@@ -60,6 +57,7 @@ $(document).ready(() => {
         let type = data.shift().value
         data.forEach((item) => {
           prositData[type][item.name] = item.value
+          Store.set('autoSave', prositData)
         })
       }
 
@@ -109,6 +107,7 @@ $(document).ready(() => {
                   newOrder.push($(tr).find('td').first().html())
                 })
                 prositData[viewTag] = newOrder
+                Store.set('autoSave', prositData)
               })
             break;
 
@@ -189,6 +188,7 @@ $(document).ready(() => {
             let el = $(this).val()
             el = el[el.length - 1] == ',' ? el.substr(0, el.length - 1) : el
             prositData[viewTag].push(el)
+            Store.set('autoSave', prositData)
             addElem(el)
             $(this).val('')
           }
@@ -204,9 +204,10 @@ $(document).ready(() => {
         /**
          * Functions
          */
-        if (viewTag != 'informations' || viewTag != 'settings' || viewTag != 'about') {
-          prositData[viewTag].forEach((elem) => addElem(elem))
+        if (viewTag != 'informations' && viewTag != 'settings' && viewTag != 'about') {
+          typeof prositData[viewTag] != 'undefined' ? prositData[viewTag].forEach((elem) => addElem(elem)) : null
         }
+        
         function addElem(e) {
           $('tbody').append(`<tr><td>${e}</td><td><a id="mod" class="btn-small dp-rose lighten-1" href="#!"><i class="material-icons">edit</i></a> <a id="del" class="btn-small dp-rose darken-1" href="#!"><i class="material-icons">clear</i></a></td></tr>`)
         }
