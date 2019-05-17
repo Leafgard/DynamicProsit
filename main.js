@@ -69,7 +69,7 @@ function createWindow() {
   })
   mainWindow.loadFile('views/app.html')
   // DevTools
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
   mainWindow.on('closed', function () {
     mainWindow = null
   })
