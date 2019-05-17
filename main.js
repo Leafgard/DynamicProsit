@@ -23,10 +23,11 @@ const Prosit = require('./src/Prosit')
  * Settings
  */
 
-const version = '3.0.1'
+const version = '3.1.0'
 
 // Initial configuration
 if (!Store.has('version') || Store.get('version') != version) {
+  Store.set('autoSave', { informations: {}, keywords: [], contraints: [], problematics: [], solutions: [], deliverables: [], actionsPlan: [] })
   Store.set('version', version)
   Store.set('theme', 'light')
   Store.set('wiki', true)

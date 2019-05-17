@@ -129,9 +129,11 @@ module.exports = new ( class Prosit {
           fs.writeFileSync(link, buf)
           fs.writeFileSync(`${path.dirname(link) + path.sep}Prosit.json`, JSON.stringify(docDatas))
           event.sender.send('success', 'Les fichiers .docx et .json ont été générés !')
+          Store.set('autoSave', { informations: {}, keywords: [], contraints: [], problematics: [], solutions: [], deliverables: [], actionsPlan: [] })
         } else {
           fs.writeFileSync(link, buf)
           event.sender.send('success', 'Le fichier .docx à été généré !')
+          Store.set('autoSave', { informations: {}, keywords: [], contraints: [], problematics: [], solutions: [], deliverables: [], actionsPlan: [] })
         }
       }
     })

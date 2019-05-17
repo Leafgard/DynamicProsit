@@ -37,6 +37,7 @@
 * Possibilité de créer son propre modèle et l'importer
 * Possibilité de réorganiser le plan d'action
 * Possible autocomplétion des mots-clés via l'API de Wikipédia (Bêta)
+* Sauvegarde automatique au fur et à mesure de la complétion du Prosit pour éviter une perte des données en cas de crash
 * Thème clair / foncé
 * Compatibilité MacOS / Windows et Linux !
 
