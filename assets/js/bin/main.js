@@ -9,6 +9,14 @@ const {
 const elWindow = remote.getCurrentWindow()
 const ipcRenderer = require('electron').ipcRenderer
 
+const map = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#039;'
+}
+
 if (Store.get('theme') == 'dark') $('head').append('<link id="theme" rel="stylesheet" href="../assets/css/dark-theme.css">')
 
 const prositData = Store.get('autoSave')
@@ -185,12 +193,15 @@ $(document).ready(() => {
         // Detect key input
         $('#p_keyw, #p_contraint, #p_problematic, #p_solution, #p_deliverable, #p_action').keyup(function (e) {
           if (e.which == 13) {
-            let el = $(this).val()
-            el = el[el.length - 1] == ',' ? el.substr(0, el.length - 1) : el
-            prositData[viewTag].push(el)
-            Store.set('autoSave', prositData)
-            addElem(el)
-            $(this).val('')
+            let el = $(this).val().trim()
+            el = el.replace(/[&<>"']/g, function(m) { return map[m]; })
+            if (el.length) {
+              el = el[el.length - 1] == ',' ? el.substr(0, el.length - 1) : el
+              prositData[viewTag].push(el)
+              Store.set('autoSave', prositData)
+              addElem(el)
+              $(this).val('')
+            }
           }
         })
         // Remove item on click
