@@ -1,5 +1,5 @@
-import { app, BrowserWindow } from 'electron';
-import * as isDev from 'electron-is-dev';
+import { app, BrowserWindow } from 'electron'
+import * as isDev from 'electron-is-dev'
 
 const createWindow = (): void => {
   let win = new BrowserWindow({
@@ -8,11 +8,22 @@ const createWindow = (): void => {
     webPreferences: {
       nodeIntegration: true
     }
-  });
+  })
 
   win.loadURL(isDev
     ? 'http://localhost:9000'
-    : `file://${app.getAppPath()}/index.html`);
-}
+    : `file://${app.getAppPath()}/index.html`)
 
-app.on('ready', createWindow);
+app.whenReady().then(createWindow)
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
+
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow()
+  }
+})
