@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
     mode: 'development',
     entry: './src/renderer.tsx',
-    target: 'electron-renderer',
+    target: 'web',
     devtool: 'source-map',
     devServer: {
         contentBase: path.join(__dirname, 'dist/renderer.js'),
@@ -31,7 +31,14 @@ module.exports = {
                     'css-loader',
                     'sass-loader',
                 ],
-            }
+            },
+            {
+                test: /\.css$/i,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ],
+            },
         ]
     },
     output: {
