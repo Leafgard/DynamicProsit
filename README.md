@@ -1,4 +1,4 @@
-<p align="center"><img src="build/icon.png" height="128" alt="DynamicProsit"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Leafgard/DynamicProsit/master/build/icon.png" height="128" alt="DynamicProsit"></p>
 <h3 align="center">DynamicProsit</h3>
 <p align="center"><i>Interface d'édition de Prosits</i><p>
 
@@ -22,7 +22,7 @@
   <a href="#license">License</a>
 </p>
 
-<p align="center"><img src="assets/img/example.png" alt="DynamicProsit"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Leafgard/DynamicProsit/master/assets/img/example.png" alt="DynamicProsit"></p>
 
 ## Fonctionnalités
 
@@ -71,11 +71,11 @@ Les tags sont sensibles aux styles que vous leur donnez, par exemple, si vous é
 Voici un exemple:
 
 <p align="center">
-  <img src="assets/img/example2.png" alt="DynamicProsit" width="800">
+  <img src="https://raw.githubusercontent.com/Leafgard/DynamicProsit/master/assets/img/example2.png" alt="DynamicProsit" width="800">
   <br>
-  <img src="assets/img/down_arrow.png" alt="down_arrow" height="80">
+  <img src="https://raw.githubusercontent.com/Leafgard/DynamicProsit/master/assets/img/down_arrow.png" alt="down_arrow" height="80">
   <br>
-  <img src="assets/img/example3.png" alt="DynamicProsit" width="800">
+  <img src="https://raw.githubusercontent.com/Leafgard/DynamicProsit/master/assets/img/example3.png" alt="DynamicProsit" width="800">
 </p>
 
 ## License
