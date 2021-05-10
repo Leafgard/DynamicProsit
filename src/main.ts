@@ -7,7 +7,7 @@ import { DefaultChannel } from './channels/DefaultChannel'
 import { WindowControlsChannel } from './channels/WindowControlsChannel'
 import { mainConfig } from './config/config.main'
 
-init({ dsn: mainConfig.SENTRY_DSN })
+init({ dsn: mainConfig.SENTRY_DSN, environment: process.env.NODE_ENV })
 
 const isDev = process.env.NODE_ENV === 'development'
 
