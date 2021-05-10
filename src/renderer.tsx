@@ -1,10 +1,19 @@
+import { init } from '@sentry/browser'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './components/App'
 
-import 'milligram/dist/milligram.min.css'
+import { Provider } from 'react-redux'
+import { App } from './App'
+
+import './assets/less/App.less'
+import { rendererConfig } from './config/config.renderer'
+import { store } from './store'
+
+init({ dsn: rendererConfig.SENTRY_DSN })
 
 ReactDOM.render(
-  <App/>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 )
