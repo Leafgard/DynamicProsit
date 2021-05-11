@@ -59,7 +59,7 @@ export const App = (): JSX.Element => {
                 <Switch>
                   {buildContentRoutes()}
                 </Switch>
-                <Footer style={{ textAlign: 'center' }}>DynamicProsit | Made with ❤️ by Leafgard | v4.0.0</Footer>
+                <Footer style={{ textAlign: 'center' }}>DynamicProsit | Made with 💜 by Yann SEGET | v4.0.0</Footer>
               </Layout>
             </Layout>
           </Router>

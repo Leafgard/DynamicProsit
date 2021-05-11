@@ -10,7 +10,7 @@ const { Sider } = Layout
 
 export const Navigation = withErrorBoundary((): JSX.Element => {
   const location = useLocation()
-  const [isCollapsed, setIsCollapsed] = useState(true)
+  const [isCollapsed, setIsCollapsed] = useState(false)
 
   const defaultSelectedKey = useMemo(() => {
     const route = routes.find((r) => r.path === location.pathname)
@@ -67,7 +67,7 @@ export const Navigation = withErrorBoundary((): JSX.Element => {
 
   return (
     <Sider
-      width={200}
+      width={240}
       className='site-layout-background'
       collapsible
       collapsed={isCollapsed}

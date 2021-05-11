@@ -1,9 +1,10 @@
 import React from 'react'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { FiHelpCircle, FiSettings } from 'react-icons/fi'
-import { BsNewspaper } from 'react-icons/bs'
-
-import { VscFeedback } from 'react-icons/vsc'
+import { VscFeedback, VscKey, VscLock } from 'react-icons/vsc'
+import { BiQuestionMark, BiTargetLock } from 'react-icons/bi'
+import { TiLightbulb } from 'react-icons/ti'
+import { BsListCheck } from 'react-icons/bs'
 
 import { InformationView } from './views/InformationsView'
 import { SettingsView } from './views/SettingsView'
@@ -22,12 +23,66 @@ export interface IRoute {
 
 export const routes: IRoute[] = [
   {
-    id: 'prosit',
-    label: 'Prosit',
+    id: 'informations',
+    label: 'Informations',
     path: '/',
     exact: true,
-    icon: <BsNewspaper className='anticon' />,
-    component: <InformationView />,
+    icon: <AiOutlineInfoCircle className="anticon"/>,
+    component: <InformationView/>,
+    subRoutes: []
+  },
+  {
+    id: 'keywords',
+    label: 'Mots-clés',
+    path: '/keywords',
+    exact: true,
+    icon: <VscKey className="anticon"/>,
+    component: <InformationView/>,
+    subRoutes: []
+  },
+  {
+    id: 'constraints',
+    label: 'Contraintes',
+    path: '/constraints',
+    exact: true,
+    icon: <VscLock className="anticon"/>,
+    component: <InformationView/>,
+    subRoutes: []
+  },
+  {
+    id: 'problematics',
+    label: 'Problématiques',
+    path: '/problematics',
+    exact: true,
+    icon: <BiQuestionMark className="anticon"/>,
+    component: <InformationView/>,
+    subRoutes: []
+  },
+  {
+    id: 'solutions',
+    label: 'Pistes de solution',
+    path: '/solutions',
+    exact: true,
+    icon: <TiLightbulb className="anticon"/>,
+    component: <InformationView/>,
+    subRoutes: []
+  },
+  {
+    id: 'deliverables',
+    label: 'Livrables',
+    path: '/deliverables',
+    exact: true,
+    icon: <BiTargetLock className="anticon"/>,
+    component: <InformationView/>,
+    subRoutes: []
+  },
+  {
+    id: 'actionsplan',
+    label: 'Plan d\'action',
+    path: '/actionsplan',
+    exact: true,
+    icon: <BsListCheck className="anticon"/>,
+    component: <InformationView/>,
     subRoutes: []
   },
   {
