@@ -1,4 +1,4 @@
-import { Layout, Spin } from 'antd'
+import { Layout } from 'antd'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -47,7 +47,7 @@ export const App = (): JSX.Element => {
 
   return (
     <div className='app'>
-      { error !== undefined && eventId !== undefined ? (
+      {error !== undefined && eventId !== undefined ? (
         <FallbackErrorComponent error={error} eventId={eventId} />
       ) : (
         <Layout style={{ height: '100vh' }}>
@@ -64,7 +64,7 @@ export const App = (): JSX.Element => {
             </Layout>
           </Router>
         </Layout>
-      ) }
+      )}
     </div>
   )
 }

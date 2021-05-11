@@ -58,7 +58,7 @@ export const Navigation = withErrorBoundary((): JSX.Element => {
         <Link to={route.path}>
           {route.icon}
           <span>
-            { route.label }
+            {route.label}
           </span>
         </Link>
       </Menu.Item>
@@ -78,7 +78,7 @@ export const Navigation = withErrorBoundary((): JSX.Element => {
         defaultSelectedKeys={[defaultSelectedKey]}
         style={{ height: '100%', borderRight: 0 }}
       >
-        { buildNavigation() }
+        {buildNavigation()}
       </Menu>
     </Sider>
   )

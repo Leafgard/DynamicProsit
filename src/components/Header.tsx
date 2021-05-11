@@ -33,7 +33,7 @@ export const Header = withErrorBoundary((): JSX.Element => {
 
   return (
     <AntdHeader className='header'>
-      {/*<img height={24} src={icon} alt='Logo DynamicProsit' />*/}
+      {/* <img height={24} src={icon} alt='Logo DynamicProsit' /> */}
       <Menu selectable={false} theme='dark' mode='horizontal' style={{ position: 'absolute', top: 0, right: 0 }}>
         <Menu.Item key='1' onClick={minimize}>
           <FaRegWindowMinimize className='anticon' />

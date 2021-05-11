@@ -13,7 +13,9 @@
     "react:dev": "webpack serve --mode=development",
     "electron:dev": "nodemon",
     "dev": "concurrently --kill-others \"npm run react:dev\" \"npm run electron:dev\"",
-    "analyze": "source-map-explorer 'dist/main.js' 'dist/renderer.js' --gzip"
+    "analyze": "source-map-explorer 'dist/main.js' 'dist/renderer.js' --gzip",
+    "style": "ts-standard",
+    "style-fix": "ts-standard --fix"
   },
   "devDependencies": {
     "@types/react": "^17.0.4",
