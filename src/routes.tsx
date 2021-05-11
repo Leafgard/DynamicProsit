@@ -6,7 +6,7 @@ import { BiQuestionMark, BiTargetLock } from 'react-icons/bi'
 import { TiLightbulb } from 'react-icons/ti'
 import { BsListCheck } from 'react-icons/bs'
 
-import { InformationView } from './views/InformationsView'
+import { DetailsView } from './views/DetailsView'
 import { SettingsView } from './views/SettingsView'
 import { AboutView } from './views/help/AboutView'
 import { FeedbackView } from './views/help/FeedbackView'
@@ -23,12 +23,12 @@ export interface IRoute {
 
 export const routes: IRoute[] = [
   {
-    id: 'informations',
-    label: 'Informations',
+    id: 'details',
+    label: 'Détails',
     path: '/',
     exact: true,
     icon: <AiOutlineInfoCircle className="anticon"/>,
-    component: <InformationView/>,
+    component: <DetailsView/>,
     subRoutes: []
   },
   {
@@ -37,7 +37,7 @@ export const routes: IRoute[] = [
     path: '/keywords',
     exact: true,
     icon: <VscKey className="anticon"/>,
-    component: <InformationView/>,
+    component: <DetailsView/>,
     subRoutes: []
   },
   {
@@ -46,7 +46,7 @@ export const routes: IRoute[] = [
     path: '/constraints',
     exact: true,
     icon: <VscLock className="anticon"/>,
-    component: <InformationView/>,
+    component: <DetailsView/>,
     subRoutes: []
   },
   {
@@ -55,7 +55,7 @@ export const routes: IRoute[] = [
     path: '/problematics',
     exact: true,
     icon: <BiQuestionMark className="anticon"/>,
-    component: <InformationView/>,
+    component: <DetailsView/>,
     subRoutes: []
   },
   {
@@ -64,7 +64,7 @@ export const routes: IRoute[] = [
     path: '/solutions',
     exact: true,
     icon: <TiLightbulb className="anticon"/>,
-    component: <InformationView/>,
+    component: <DetailsView/>,
     subRoutes: []
   },
   {
@@ -73,7 +73,7 @@ export const routes: IRoute[] = [
     path: '/deliverables',
     exact: true,
     icon: <BiTargetLock className="anticon"/>,
-    component: <InformationView/>,
+    component: <DetailsView/>,
     subRoutes: []
   },
   {
@@ -82,7 +82,7 @@ export const routes: IRoute[] = [
     path: '/actionsplan',
     exact: true,
     icon: <BsListCheck className="anticon"/>,
-    component: <InformationView/>,
+    component: <DetailsView/>,
     subRoutes: []
   },
   {
