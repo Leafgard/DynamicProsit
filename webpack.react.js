@@ -61,7 +61,8 @@ module.exports = (env, opts) => ({
                 modifyVars: {
                   'font-family': 'Poppins',
                   'primary-color': '#7B2CBF',
-                  'link-color': '#7B2CBF'
+                  'link-color': '#7B2CBF',
+                  'border-radius-base': '3px'
                 },
                 javascriptEnabled: true
               }

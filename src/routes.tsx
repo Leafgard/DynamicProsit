@@ -7,6 +7,7 @@ import { TiLightbulb } from 'react-icons/ti'
 import { BsListCheck } from 'react-icons/bs'
 
 import { DetailsView } from './views/DetailsView'
+import { KeywordsView } from './views/KeywordsView'
 import { SettingsView } from './views/SettingsView'
 import { AboutView } from './views/help/AboutView'
 import { FeedbackView } from './views/help/FeedbackView'
@@ -37,7 +38,7 @@ export const routes: IRoute[] = [
     path: '/keywords',
     exact: true,
     icon: <VscKey className="anticon"/>,
-    component: <DetailsView/>,
+    component: <KeywordsView/>,
     subRoutes: []
   },
   {

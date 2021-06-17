@@ -1,6 +1,6 @@
-import { Col, Form, Input, Layout, Row, Typography } from 'antd'
+import { Col, Form, FormInstance, Input, Layout, Row, Typography } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { withErrorBoundary } from '../components/ErrorBoundary'
 
 const { Content } = Layout
@@ -9,6 +9,15 @@ const { Title } = Typography
 import { MdTitle, MdInsertLink, MdShortText } from 'react-icons/md'
 
 export const DetailsView = withErrorBoundary((): JSX.Element => {
+
+  const formRef = useRef<FormInstance>()
+
+  useEffect(() => {
+    return () => {
+      console.log(formRef.current?.getFieldsValue())
+    }
+  }, [])
+
   return (
     <Content
       className='site-layout-background'
@@ -23,20 +32,45 @@ export const DetailsView = withErrorBoundary((): JSX.Element => {
       </Title>
       <br />
       <Form
+        form={formRef.current}
         layout="vertical"
         size='large'
       >
-        <Form.Item label="Titre du prosit">
-          <Input placeholder="Virtualisation" prefix={<MdTitle />} />
+        <Form.Item
+          name="title"
+          label="Titre du prosit"
+        >
+          <Input
+            placeholder="Base de données"
+            prefix={<MdTitle />}
+          />
         </Form.Item>
-        <Form.Item label="Lien du prosit">
-          <Input placeholder="https://moodle-ingenieurs.cesi.fr/course/view.php?id=603" prefix={<MdInsertLink />}  />
+        <Form.Item
+          name="link"
+          label="Lien du prosit"
+        >
+          <Input
+            placeholder="https://moodle-ingenieurs.cesi.fr/course/view.php?id=1451"
+            prefix={<MdInsertLink />}
+          />
         </Form.Item>
-        <Form.Item label="Généralisation">
-          <Input placeholder="Allumer un feu" prefix={<MdShortText />}  />
+        <Form.Item
+          name="generalization"
+          label="Généralisation"
+        >
+          <Input
+            placeholder="Mise en place et gestion de BDD Oracle"
+            prefix={<MdShortText />}
+          />
         </Form.Item>
-        <Form.Item label="Contexte">
-          <Input placeholder="Fred et Jammy cherchent la réponse à la vie" prefix={<MdShortText />}  />
+        <Form.Item
+          name="context"
+          label="Contexte"
+        >
+          <Input
+            placeholder="On doit mettre en place un poste de travail avec une base de données Oracle sans master."
+            prefix={<MdShortText />}
+          />
         </Form.Item>
         <Row gutter={16}>
           <Col span={12}>
